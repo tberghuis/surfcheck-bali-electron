@@ -1,16 +1,25 @@
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
+import ReactPlayer from 'react-player';
 import icon from '../../assets/icon.svg';
 import './App.css';
 
 const Hello = () => {
   return (
     <div>
-      <video width="352" height="198" controls>
-        <source
-          src="https://cams.cdn-surfline.com/cdn-au/au-lennoxhead/playlist.m3u8"
-          type="application/x-mpegURL"
-        />
-      </video>
+      <ReactPlayer
+        playing
+        muted
+        url="https://cams.cdn-surfline.com/cdn-au/au-lennoxhead/playlist.m3u8"
+      />
+      {/* 
+      <ReactPlayer
+        playing
+        muted
+        className="react-player"
+        url="https://www.youtube.com/watch?v=ysz5S6PUM-U"
+        width="100%"
+        height="100%"
+      /> */}
     </div>
   );
 };
