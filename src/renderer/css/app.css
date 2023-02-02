@@ -1,3 +1,8 @@
 .app {
   display: flex;
 }
+
+
+.cam-list {
+  min-width: 150px;
+}

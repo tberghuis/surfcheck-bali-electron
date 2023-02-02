@@ -9,7 +9,7 @@ function CamDemo() {
       <div>
         {currentCam.name} {currentCam.url}
       </div>
-      <ReactPlayer playing muted url={currentCam.url} />
+      <ReactPlayer width="100%" height="auto" playing muted url={currentCam.url} />
     </div>
   );
 }
