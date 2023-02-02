@@ -1,4 +1,5 @@
 import { useStore } from '../store';
+import ReactPlayer from 'react-player';
 
 function CamDemo() {
   const currentCam = useStore((state) => state.currentCam);
@@ -8,6 +9,7 @@ function CamDemo() {
       <div>
         {currentCam.name} {currentCam.url}
       </div>
+      <ReactPlayer playing muted url={currentCam.url} />
     </div>
   );
 }
