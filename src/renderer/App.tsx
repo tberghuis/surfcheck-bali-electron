@@ -1,7 +1,7 @@
 import { MemoryRouter as Router, Routes, Route } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import icon from '../../assets/icon.svg';
-import './App.css';
+import './css/app.css';
 import CamDemo from "./components/CamDemo";
 import CamList from "./components/CamList";
 
