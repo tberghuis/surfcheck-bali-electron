@@ -10,6 +10,6 @@ interface UiState {
 
 export const useStore = create<UiState>((set) => ({
   // init state
-  currentCam: cams[0],
+  currentCam: cams[33],
   setCam: (cam: Cam) => set({ currentCam: cam }),
 }));
