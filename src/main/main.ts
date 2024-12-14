@@ -9,11 +9,26 @@
  * `./src/main.js` using webpack. This gives us some performance wins.
  */
 import path from 'path';
-import { app, BrowserWindow, shell, ipcMain } from 'electron';
+import { app, BrowserWindow, shell, ipcMain, session } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import MenuBuilder from './menu';
 import { resolveHtmlPath } from './util';
+
+app.on('ready', function () {
+  const filter = {
+    urls: ['https://*.cdn-surfline.com/*'],
+  };
+  session.defaultSession.webRequest.onBeforeSendHeaders(
+    filter,
+    (details, callback) => {
+      details.requestHeaders['origin'] = 'https://www.surfline.com';
+      details.requestHeaders['referer'] = 'https://www.surfline.com/';
+
+      callback({ requestHeaders: details.requestHeaders });
+    }
+  );
+});
 
 class AppUpdater {
   constructor() {
@@ -75,6 +90,7 @@ const createWindow = async () => {
     height: 728,
     icon: getAssetPath('icon.png'),
     webPreferences: {
+      webSecurity: false,
       preload: app.isPackaged
         ? path.join(__dirname, 'preload.js')
         : path.join(__dirname, '../../.erb/dll/preload.js'),

@@ -148,11 +148,12 @@ export const cams: Cam[] = [
   },
   {
     name: 'lennoxhead',
-    url: 'https://cams.cdn-surfline.com/cdn-au/au-lennoxhead/playlist.m3u8',
+    url: 'https://hls.cdn-surfline.com/east-au/au-lennoxhead/playlist.m3u8',
   },
   {
     name: 'ballinashellybeach',
     url: 'https://cams.cdn-surfline.com/cdn-au/au-ballinashellybeach/playlist.m3u8',
+    
   },
   {
     name: 'ballinalighthouse',
