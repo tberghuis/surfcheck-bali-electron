@@ -119,7 +119,7 @@ export const cams: Cam[] = [
   },
   {
     name: 'duranbah',
-    url: 'https://cams.cdn-surfline.com/cdn-au/au-duranbah/playlist.m3u8',
+    url: 'https://hls.cdn-surfline.com/east-au/au-southduranbah/playlist.m3u8',
   },
   {
     name: 'kingscliff',
